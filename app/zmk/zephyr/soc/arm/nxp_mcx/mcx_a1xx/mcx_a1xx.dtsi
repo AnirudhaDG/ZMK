@@ -1,0 +1,14 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <arm/armv7-m.dtsi>
+
+/ {
+    cpus {
+        cpu@0 {
+            compatible = "arm,cortex-m33";
+        };
+    };
+};
+
