@@ -9,11 +9,11 @@
 #include "zmk_uno-layouts.dtsi"
 
 
-&arduino_i2c {
+&lpi2c0 {
     status = "okay";
 };
 
-nice_view_spi: &arduino_spi {
+nice_view_spi: &lpspi0 {
     status = "okay";
 
     cs-gpios = <&arduino_header 16 GPIO_ACTIVE_HIGH>;
@@ -136,6 +136,35 @@ nice_view_spi: &arduino_spi {
         a-gpios = <&arduino_header 15 GPIO_PULL_UP>;
         b-gpios = <&arduino_header 14 GPIO_PULL_UP>;
     };
+    
+    arduino_header: connector {
+    compatible = "arduino-header-r3";
+    #gpio-cells = <2>;
+    gpio-map-mask = <0xffffffff 0xffffffc0>;
+    gpio-map-pass-thru = <0 0x3f>;
+
+    gpio-map =
+        /* digital */
+        <0 &gpio3 6 0>,   /* D0  = P3_6 */
+        <1 &gpio3 7 0>,   /* D1  = P3_7 */
+        <2 &gpio3 8 0>,   /* D2  = P3_8 */
+        <3 &gpio3 9 0>,   /* D3  = P3_9 */
+        <4 &gpio3 10 0>,  /* D4  = P3_10 */
+        <5 &gpio3 11 0>,  /* D5  = P3_11 */
+        <6 &gpio3 31 0>,  /* D6  = P3_31 */
+        <7 &gpio2 7 0>,   /* D7  = P2_7 */
+        <8 &gpio2 8 0>,   /* D8  = P2_8 */
+        <9 &gpio2 9 0>,   /* D9  = P2_9 */
+        <10 &gpio2 10 0>, /* D10 = P2_10 */
+        <11 &gpio2 11 0>, /* D11 = P2_11 */
+        <12 &gpio2 12 0>, /* D12 = P2_12 */
+        <13 &gpio2 13 0>, /* D13 = P2_13 */
+        <14 &gpio2 14 0>, /* A0 = P2_14 */
+        <15 &gpio2 15 0>, /* A1 = P2_15 */
+        <16 &gpio2 16 0>; /* A2 = P2_16 */
+};
+
+    
 };
 
 &matrix_physical_layout {

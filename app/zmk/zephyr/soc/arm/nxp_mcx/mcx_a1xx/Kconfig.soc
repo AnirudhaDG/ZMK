@@ -1,5 +1,0 @@
-# SPDX-License-Identifier: Apache-2.0
-
-config SOC_SERIES_MCX_A1X
-    bool "NXP MCX A1X Series MCU"
-

@@ -1,0 +1,33 @@
+-- west build: generating a build system
+-- Application: /root/test/zmk/app
+-- CMake version: 4.0.3
+-- Found Python3: /root/test/zmk/.venv/bin/python3.12 (found suitable version "3.12.3", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: /root/.cache/zephyr
+-- Zephyr version: 4.1.99 (/root/test/zmk/zephyr)
+-- Found west (found suitable version "1.4.0", minimum required is "0.14.0")
+-- Board: frdm_mcxa153, qualifiers: mcxa153
+-- Shield(s): extension_comet
+-- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+-- Found host-tools: zephyr 0.17.1 (/root/zephyr-sdk-0.17.1)
+-- Found toolchain: zephyr 0.17.1 (/root/zephyr-sdk-0.17.1)
+-- Found Dtc: /root/zephyr-sdk-0.17.1/sysroots/x86_64-pokysdk-linux/usr/bin/dtc (found suitable version "1.7.0", minimum required is "1.4.6")
+-- Found BOARD.dts: /root/test/zmk/zephyr/boards/nxp/frdm_mcxa153/frdm_mcxa153.dts
+-- Found devicetree overlay: /root/test/zmk/app/boards/shields/extension_comet/extension_comet.overlay
+-- Generated zephyr.dts: /root/test/zmk/app/build/zephyr/zephyr.dts
+-- Generated pickled edt: /root/test/zmk/app/build/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /root/test/zmk/app/build/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /root/test/zmk/app/Kconfig
+Loaded configuration '/root/test/zmk/zephyr/boards/nxp/frdm_mcxa153/frdm_mcxa153_defconfig'
+Merged configuration '/root/test/zmk/app/prj.conf'
+Merged configuration '/root/test/zmk/app/build/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to '/root/test/zmk/app/build/zephyr/.config'
+Kconfig header saved to '/root/test/zmk/app/build/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /root/zephyr-sdk-0.17.1/arm-zephyr-eabi/arm-zephyr-eabi/bin/ld.bfd (found version "2.38")
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /root/zephyr-sdk-0.17.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+-- Looking for device MCXA153 in /root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/
+-- Found device folder: /root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/MCX/MCXA/MCXA153
+-- Using ccache: /usr/bin/ccache
+-- Found gen_kobject_list: /root/test/zmk/zephyr/scripts/build/gen_kobject_list.py

@@ -1,2 +1,0 @@
-zephyr_sources_ifdef(CONFIG_SOC_SERIES_MCX_A1X mcx_a1xx.dtsi)
-
