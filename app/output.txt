@@ -1,33 +1,110 @@
 -- west build: generating a build system
+Put cmake in trace mode.
 -- Application: /root/test/zmk/app
 -- CMake version: 4.0.3
--- Found Python3: /root/test/zmk/.venv/bin/python3.12 (found suitable version "3.12.3", minimum required is "3.12") found components: Interpreter
 -- Cache files will be written to: /root/.cache/zephyr
 -- Zephyr version: 4.1.99 (/root/test/zmk/zephyr)
 -- Found west (found suitable version "1.4.0", minimum required is "0.14.0")
 -- Board: frdm_mcxa153, qualifiers: mcxa153
--- Shield(s): extension_comet
--- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+-- Shield(s): CmtKExt
 -- Found host-tools: zephyr 0.17.1 (/root/zephyr-sdk-0.17.1)
 -- Found toolchain: zephyr 0.17.1 (/root/zephyr-sdk-0.17.1)
--- Found Dtc: /root/zephyr-sdk-0.17.1/sysroots/x86_64-pokysdk-linux/usr/bin/dtc (found suitable version "1.7.0", minimum required is "1.4.6")
 -- Found BOARD.dts: /root/test/zmk/zephyr/boards/nxp/frdm_mcxa153/frdm_mcxa153.dts
--- Found devicetree overlay: /root/test/zmk/app/boards/shields/extension_comet/extension_comet.overlay
+-- Found devicetree overlay: /root/test/zmk/app/boards/shields/CmtKExt/CmtKExt.overlay
 -- Generated zephyr.dts: /root/test/zmk/app/build/zephyr/zephyr.dts
 -- Generated pickled edt: /root/test/zmk/app/build/zephyr/edt.pickle
 -- Generated devicetree_generated.h: /root/test/zmk/app/build/zephyr/include/generated/zephyr/devicetree_generated.h
 Parsing /root/test/zmk/app/Kconfig
-Loaded configuration '/root/test/zmk/zephyr/boards/nxp/frdm_mcxa153/frdm_mcxa153_defconfig'
-Merged configuration '/root/test/zmk/app/prj.conf'
-Merged configuration '/root/test/zmk/app/build/zephyr/misc/generated/extra_kconfig_options.conf'
-Configuration saved to '/root/test/zmk/app/build/zephyr/.config'
-Kconfig header saved to '/root/test/zmk/app/build/zephyr/include/generated/zephyr/autoconf.h'
--- Found GnuLd: /root/zephyr-sdk-0.17.1/arm-zephyr-eabi/arm-zephyr-eabi/bin/ld.bfd (found version "2.38")
--- The C compiler identification is GNU 12.2.0
--- The CXX compiler identification is GNU 12.2.0
--- The ASM compiler identification is GNU
--- Found assembler: /root/zephyr-sdk-0.17.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+Loaded configuration '/root/test/zmk/app/build/zephyr/.config'
+No change to configuration in '/root/test/zmk/app/build/zephyr/.config'
+No change to Kconfig header in '/root/test/zmk/app/build/zephyr/include/generated/zephyr/autoconf.h'
 -- Looking for device MCXA153 in /root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/
 -- Found device folder: /root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/MCX/MCXA/MCXA153
 -- Using ccache: /usr/bin/ccache
 -- Found gen_kobject_list: /root/test/zmk/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (6.1s)
+-- Generating done (0.3s)
+-- Build files have been written to: /root/test/zmk/app/build
+-- west build: building application
+[1/187] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[2/183] Building C object zephyr/CMakeFiles/offsets.dir/arch/arm/core/offsets/offsets.c.obj
+[3/183] Generating include/generated/zephyr/offsets.h
+[4/183] Building C object CMakeFiles/app.dir/src/stdlib.c.obj
+[5/183] Building C object CMakeFiles/app.dir/src/ext_power_generic.c.obj
+[6/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_ext_power.c.obj
+[7/183] Building C object CMakeFiles/app.dir/src/matrix_transform.c.obj
+[8/183] Building C object CMakeFiles/app.dir/src/events/activity_state_changed.c.obj
+[9/183] Building C object CMakeFiles/app.dir/src/sensors.c.obj
+[10/183] Building C object CMakeFiles/app.dir/src/events/sensor_event.c.obj
+[11/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_reset.c.obj
+[12/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_key_repeat.c.obj
+[13/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_caps_word.c.obj
+[14/183] Building C object CMakeFiles/app.dir/src/event_manager.c.obj
+[15/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_key_press.c.obj
+/root/test/zmk/app/src/behaviors/behavior_key_press.c:52:41: warning: 'behavior_key_press_driver_api' defined but not used [-Wunused-const-variable=]
+   52 | static const struct behavior_driver_api behavior_key_press_driver_api = {
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[16/183] Building C object CMakeFiles/app.dir/src/activity.c.obj
+[17/183] Building C object CMakeFiles/app.dir/src/physical_layouts.c.obj
+[18/183] Building C object CMakeFiles/app.dir/src/events/position_state_changed.c.obj
+[19/183] Building C object CMakeFiles/app.dir/src/behavior.c.obj
+[20/183] Building C object CMakeFiles/app.dir/src/events/usb_conn_state_changed.c.obj
+[21/183] Building C object CMakeFiles/app.dir/src/hid.c.obj
+[22/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_momentary_layer.c.obj
+FAILED: CMakeFiles/app.dir/src/behaviors/behavior_momentary_layer.c.obj 
+ccache /root/zephyr-sdk-0.17.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -DCPU_MCXA153VLH -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DNDEBUG -DPICOLIBC_MINIMAL_PRINTF_SCANF -D__LINUX_ERRNO_EXTENSIONS__ -D__PROGRAM_START -D__ZEPHYR__=1 -I/root/test/zmk/app/include -I/root/test/zmk/app/build/zephyr/include/generated/zephyr -I/root/test/zmk/zephyr/include -I/root/test/zmk/app/build/zephyr/include/generated -I/root/test/zmk/zephyr/soc/nxp/mcx -I/root/test/zmk/zephyr/soc/nxp/mcx/mcxa/. -I/root/test/zmk/zephyr/subsys/usb/device -I/root/test/zmk/modules/hal/cmsis/CMSIS/Core/Include -I/root/test/zmk/modules/hal/cmsis_6/CMSIS/Core/Include -I/root/test/zmk/zephyr/modules/cmsis_6/. -I/root/test/zmk/zephyr/modules/hal_nxp/mcux/mcux-sdk-ng/middleware -I/root/test/zmk/zephyr/modules/hal_nxp/mcux/mcux-sdk-ng/. -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/middleware/usb/device -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/middleware/usb/phy -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/middleware/usb/include -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/common -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/components/osa/config -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/components/osa -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/lpadc -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/lpuart -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/mcx_cmc -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/mcx_spc -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/port -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/MCX/MCXA/MCXA153 -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/MCX/MCXA/periph -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/MCX/MCXA/MCXA153/drivers/romapi -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/MCX/MCXA/MCXA153/drivers -I/root/test/zmk/modules/hal/ti/mspm0/source/ti/devices/msp/. -I/root/test/zmk/modules/hal/ti/mspm0/source/ti/devices/msp/m0p -I/root/test/zmk/modules/hal/ti/mspm0/source/ti/devices/msp/peripherals -I/root/test/zmk/modules/hal/ti/mspm0/source/ti/devices/msp/peripherals/m0p -I/root/test/zmk/modules/hal/ti/mspm0/source/ti/devices/msp/peripherals/m0p/sysctl -I/root/test/zmk/app/module/include -isystem /root/test/zmk/zephyr/lib/libc/common/include -DUSE_RTOS=1 -DUSE_RTOS=1 -DUSE_RTOS=1 -DUSE_RTOS=1 -DUSE_RTOS=1 -fno-strict-aliasing -Os -imacros /root/test/zmk/app/build/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -mcpu=cortex-m33+nodsp -mthumb -mabi=aapcs -mfp16-format=ieee -mtp=soft --sysroot=/root/zephyr-sdk-0.17.1/arm-zephyr-eabi/arm-zephyr-eabi -imacros /root/test/zmk/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=/root/test/zmk/app=CMAKE_SOURCE_DIR -fmacro-prefix-map=/root/test/zmk/zephyr=ZEPHYR_BASE -fmacro-prefix-map=/root/test/zmk=WEST_TOPDIR -ffunction-sections -fdata-sections -specs=picolibc.specs -std=c99 -Wfatal-errors -MD -MT CMakeFiles/app.dir/src/behaviors/behavior_momentary_layer.c.obj -MF CMakeFiles/app.dir/src/behaviors/behavior_momentary_layer.c.obj.d -o CMakeFiles/app.dir/src/behaviors/behavior_momentary_layer.c.obj -c /root/test/zmk/app/src/behaviors/behavior_momentary_layer.c
+In file included from /root/test/zmk/zephyr/include/zephyr/toolchain.h:52,
+                 from /root/test/zmk/zephyr/include/zephyr/sys/__assert.h:11,
+                 from /root/test/zmk/zephyr/include/zephyr/irq_multilevel.h:15,
+                 from /root/test/zmk/zephyr/include/zephyr/devicetree.h:20,
+                 from /root/test/zmk/zephyr/include/zephyr/device.h:12,
+                 from /root/test/zmk/app/src/behaviors/behavior_momentary_layer.c:9:
+/root/test/zmk/zephyr/include/zephyr/toolchain/gcc.h:87:36: error: static assertion failed: "DT_N_INST_0_zmk_behavior_momentary_layer_FULL_NAME too long"
+   87 | #define BUILD_ASSERT(EXPR, MSG...) _Static_assert((EXPR), "" MSG)
+      |                                    ^~~~~~~~~~~~~~
+/root/test/zmk/zephyr/include/zephyr/device.h:1141:9: note: in expansion of macro 'BUILD_ASSERT'
+ 1141 |         BUILD_ASSERT(sizeof(Z_STRINGIFY(name)) <= Z_DEVICE_MAX_NAME_LEN,       \
+      |         ^~~~~~~~~~~~
+/root/test/zmk/zephyr/include/zephyr/device.h:1294:9: note: in expansion of macro 'Z_DEVICE_NAME_CHECK'
+ 1294 |         Z_DEVICE_NAME_CHECK(name);                                              \
+      |         ^~~~~~~~~~~~~~~~~~~
+/root/test/zmk/zephyr/include/zephyr/device.h:243:9: note: in expansion of macro 'Z_DEVICE_DEFINE'
+  243 |         Z_DEVICE_DEFINE(node_id, Z_DEVICE_DT_DEV_ID(node_id),                  \
+      |         ^~~~~~~~~~~~~~~
+/root/test/zmk/zephyr/include/zephyr/device.h:258:9: note: in expansion of macro 'DEVICE_DT_DEINIT_DEFINE'
+  258 |         DEVICE_DT_DEINIT_DEFINE(node_id, init_fn, NULL, pm, data, config,      \
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/test/zmk/zephyr/include/zephyr/device.h:281:9: note: in expansion of macro 'DEVICE_DT_DEFINE'
+  281 |         DEVICE_DT_DEFINE(DT_DRV_INST(inst), __VA_ARGS__)
+      |         ^~~~~~~~~~~~~~~~
+/root/test/zmk/app/include/drivers/behavior.h:181:5: note: in expansion of macro 'DEVICE_DT_INST_DEFINE'
+  181 |     DEVICE_DT_INST_DEFINE(inst, __VA_ARGS__);                                                      \
+      |     ^~~~~~~~~~~~~~~~~~~~~
+/root/test/zmk/app/src/behaviors/behavior_momentary_layer.c:59:1: note: in expansion of macro 'BEHAVIOR_DT_INST_DEFINE'
+   59 | BEHAVIOR_DT_INST_DEFINE(0, NULL, NULL, NULL, NULL, POST_KERNEL, CONFIG_KERNEL_INIT_PRIORITY_DEFAULT,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated due to -Wfatal-errors.
+[23/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_mod_morph.c.obj
+[24/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_to_layer.c.obj
+[25/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_toggle_layer.c.obj
+[26/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_transparent.c.obj
+[27/183] Building C object CMakeFiles/app.dir/src/events/endpoint_changed.c.obj
+[28/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_none.c.obj
+[29/183] Building C object CMakeFiles/app.dir/src/behaviors/behavior_outputs.c.obj
+[30/183] Building C object CMakeFiles/app.dir/src/behavior_queue.c.obj
+[31/183] Building C object CMakeFiles/app.dir/src/conditional_layer.c.obj
+[32/183] Building C object CMakeFiles/app.dir/src/combo.c.obj
+[33/183] Building C object CMakeFiles/app.dir/src/hid_listener.c.obj
+[34/183] Building C object CMakeFiles/app.dir/src/endpoints.c.obj
+[35/183] Building C object CMakeFiles/app.dir/src/keymap.c.obj
+FAILED: CMakeFiles/app.dir/src/keymap.c.obj 
+ccache /root/zephyr-sdk-0.17.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -DCPU_MCXA153VLH -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DNDEBUG -DPICOLIBC_MINIMAL_PRINTF_SCANF -D__LINUX_ERRNO_EXTENSIONS__ -D__PROGRAM_START -D__ZEPHYR__=1 -I/root/test/zmk/app/include -I/root/test/zmk/app/build/zephyr/include/generated/zephyr -I/root/test/zmk/zephyr/include -I/root/test/zmk/app/build/zephyr/include/generated -I/root/test/zmk/zephyr/soc/nxp/mcx -I/root/test/zmk/zephyr/soc/nxp/mcx/mcxa/. -I/root/test/zmk/zephyr/subsys/usb/device -I/root/test/zmk/modules/hal/cmsis/CMSIS/Core/Include -I/root/test/zmk/modules/hal/cmsis_6/CMSIS/Core/Include -I/root/test/zmk/zephyr/modules/cmsis_6/. -I/root/test/zmk/zephyr/modules/hal_nxp/mcux/mcux-sdk-ng/middleware -I/root/test/zmk/zephyr/modules/hal_nxp/mcux/mcux-sdk-ng/. -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/middleware/usb/device -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/middleware/usb/phy -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/middleware/usb/include -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/common -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/components/osa/config -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/components/osa -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/lpadc -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/lpuart -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/mcx_cmc -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/mcx_spc -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/drivers/port -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/MCX/MCXA/MCXA153 -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/MCX/MCXA/periph -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/MCX/MCXA/MCXA153/drivers/romapi -I/root/test/zmk/modules/hal/nxp/mcux/mcux-sdk-ng/devices/MCX/MCXA/MCXA153/drivers -I/root/test/zmk/modules/hal/ti/mspm0/source/ti/devices/msp/. -I/root/test/zmk/modules/hal/ti/mspm0/source/ti/devices/msp/m0p -I/root/test/zmk/modules/hal/ti/mspm0/source/ti/devices/msp/peripherals -I/root/test/zmk/modules/hal/ti/mspm0/source/ti/devices/msp/peripherals/m0p -I/root/test/zmk/modules/hal/ti/mspm0/source/ti/devices/msp/peripherals/m0p/sysctl -I/root/test/zmk/app/module/include -isystem /root/test/zmk/zephyr/lib/libc/common/include -DUSE_RTOS=1 -DUSE_RTOS=1 -DUSE_RTOS=1 -DUSE_RTOS=1 -DUSE_RTOS=1 -fno-strict-aliasing -Os -imacros /root/test/zmk/app/build/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -mcpu=cortex-m33+nodsp -mthumb -mabi=aapcs -mfp16-format=ieee -mtp=soft --sysroot=/root/zephyr-sdk-0.17.1/arm-zephyr-eabi/arm-zephyr-eabi -imacros /root/test/zmk/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=/root/test/zmk/app=CMAKE_SOURCE_DIR -fmacro-prefix-map=/root/test/zmk/zephyr=ZEPHYR_BASE -fmacro-prefix-map=/root/test/zmk=WEST_TOPDIR -ffunction-sections -fdata-sections -specs=picolibc.specs -std=c99 -Wfatal-errors -MD -MT CMakeFiles/app.dir/src/keymap.c.obj -MF CMakeFiles/app.dir/src/keymap.c.obj.d -o CMakeFiles/app.dir/src/keymap.c.obj -c /root/test/zmk/app/src/keymap.c
+/root/test/zmk/app/src/keymap.c:33:2: error: #error "Keymap node not found, check a keymap is available and is has compatible = "zmk,keymap" set"
+   33 | #error "Keymap node not found, check a keymap is available and is has compatible = "zmk,keymap" set"
+      |  ^~~~~
+compilation terminated due to -Wfatal-errors.
+[36/183] Building C object CMakeFiles/app.dir/src/events/layer_state_changed.c.obj
+[37/183] Building C object CMakeFiles/app.dir/src/events/modifiers_state_changed.c.obj
+[38/183] Building C object CMakeFiles/app.dir/src/events/keycode_state_changed.c.obj
+[39/183] Building C object CMakeFiles/app.dir/src/usb.c.obj
+ninja: build stopped: subcommand failed.

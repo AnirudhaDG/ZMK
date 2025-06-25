@@ -1,4 +1,4 @@
-if SHIELD_EXTENSION_COMET
+if SHIELD_CmtKExt
 config ZMK_KEYBOARD_NAME
     default "CmtKExt"
 config ZMK_USB

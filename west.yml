@@ -1,0 +1,7 @@
+manifest:
+  remotes:
+    - name: AnirudhaDG
+      url-base: https://github.com/AnirudhaDG
+  projects:
+    - name: zmk-keyboard-CmtKExt
+      remote: AnirudhaDG
